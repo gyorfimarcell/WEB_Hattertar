@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Háttértár sebesség</title>
+    <link rel="stylesheet" href="hattertar.css">
+    <script src="hattertar.js"></script>
+</head>
+<body>
+    <div id="hatter">
+        <h1>Háttértár számoló</h1>
+        <div class="sor">
+            <label for="kapacitas">Kapacitás:</label>
+            <input type="number" min="1" name="kapacitas" id="kapacitas">
+            <select name="kapacitasMe" id="kapacitasMe">
+                <option value="0">KB</option>
+                <option value="1" selected>MB</option>
+                <option value="2">GB</option>
+                <option value="3">TB</option>
+            </select>
+        </div>
+        <div class="sor">
+            <label for="sebesseg">Átviteli Sebesség:</label>
+            <input type="range" min="10" max="5000" value="3200" name="sebesseg" id="sebesseg"
+                oninput="SebessegErtek()">
+            <span id="sebessegErtek">3200</span>
+            <select name="sebessegMe" id="sebessegMe">
+                <option value="0">KB/s</option>
+                <option value="1" selected>MB/s</option>
+                <option value="2">GB/s</option>
+                <option value="3">TB/s</option>
+            </select>
+        </div>
+        <button onclick="Szamol()">Számol</button>
+        <h4 id="eredmeny"></h4>
+    </div>
+</body>
+</html>
